@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Calculadora</title>
+
+<script>
+	var num1 = 0
+    var num2 = 0
+    var result = 0
+
+function calcula(operacio){
+    num1 = document.calc.num1.value
+    num2 = document.calc.num2.value
+    result = eval(num1 + operacio + num2)
+    document.calc.resultat.value = result
+}
+function reset(){
+	num1 = 0
+    num2 = 0
+    result = 0
+}
+function major(){
+    num1 = document.calc.num1.value
+    num2 = document.calc.num2.value
+	if (num1>num2) alert("El primer numero es més gran!")
+    else if (num1<num2) alert("El segon numero es més gran!")
+    else alert("Els numeros son iguals!")
+}
+function iguala1(){
+	num1 = document.calc.num1.value
+    num2 = document.calc.num2.value
+	if (num1==1 || num2==1 || (num1==1 && num2==1)) alert(true)
+    else alert(false)
+}
+
+</script> 
+
+</head>
+<body>
+<h2>Calculadora</h2>
+
+<form name="calc">
+<label for="fnum">Primer numero:</label><br>
+<input type="Text" name="num1" value="0" size="12"><br>
+<label for="lnum">Segon numero:</label><br>
+<input type="Text" name="num2" value="0" size="12"><br>
+<label for="Operacions">Operacions:</label>
+<br>
+<input type="Button" name="" value=" + " onclick="calcula('+')">
+<input type="Button" name="" value=" - " onclick="calcula('-')">
+<input type="Button" name="" value=" x " onclick="calcula('*')">
+<input type="Button" name="" value=" / " onclick="calcula('/')">
+<input type="Button" name="" value=">" onclick="major()">
+<input type="Button" name="" value="=1" onclick="iguala1()">
+<br>
+<label for="res">Resultat:</label><br>
+<input type="Text" name="resultat" value="0" size="12"><br>
+<input type="Button" name="" value="Reset" onclick="reset()">
+</form> 
+
+</body>
+</html>
